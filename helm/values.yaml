@@ -1,3 +1,17 @@
+# Shipwave API image built from api/Dockerfile.
+api:
+  replicaCount: 1
+  image:
+    repository: shipwave-api
+    tag: "latest"
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 8000
+  env:
+    apiKey: "change-me"
+
 # The worker image is pre-built and shared by the trainer.
 worker:
   image:
